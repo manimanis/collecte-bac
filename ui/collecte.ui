@@ -19,8 +19,22 @@
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout" columnstretch="0,0">
-   <item row="0" column="0" colspan="2">
-    <widget class="QLabel" name="txtDate">
+   <item row="5" column="0" colspan="2">
+    <widget class="QLabel" name="lblArb">
+     <property name="styleSheet">
+      <string notr="true">font-weight: bold;
+font-size: 12pt;</string>
+     </property>
+     <property name="text">
+      <string>Arborescence</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2">
+    <widget class="QLabel" name="txtCurrDate">
      <property name="styleSheet">
       <string notr="true">font-size: 60px;
 font-weight: bold;
@@ -34,107 +48,158 @@ color: rgb(85, 170, 0);</string>
      </property>
     </widget>
    </item>
-   <item row="1" column="0" colspan="2">
-    <widget class="QTabWidget" name="tabSeances">
-     <property name="tabShape">
-      <enum>QTabWidget::Rounded</enum>
-     </property>
-     <property name="currentIndex">
-      <number>0</number>
-     </property>
-     <property name="elideMode">
-      <enum>Qt::ElideLeft</enum>
-     </property>
-     <property name="documentMode">
-      <bool>false</bool>
-     </property>
-     <property name="tabsClosable">
-      <bool>false</bool>
-     </property>
-     <property name="tabBarAutoHide">
-      <bool>false</bool>
-     </property>
-     <widget class="QWidget" name="tabSeance1">
-      <attribute name="title">
-       <string>Séance 1</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0" colspan="2">
-        <widget class="QTabWidget" name="tabLabos">
-         <property name="tabPosition">
-          <enum>QTabWidget::East</enum>
-         </property>
-         <property name="currentIndex">
-          <number>0</number>
-         </property>
-         <widget class="QWidget" name="tabLabo1">
-          <attribute name="title">
-           <string>Labo 1</string>
-          </attribute>
-          <layout class="QGridLayout" name="gridLayout_3">
-           <item row="0" column="0">
-            <widget class="QLabel" name="txtSeance">
-             <property name="styleSheet">
-              <string notr="true">font-size: 40px;
+   <item row="4" column="0">
+    <widget class="QLabel" name="txtCurrSeance">
+     <property name="styleSheet">
+      <string notr="true">font-size: 40px;
 font-weight: bold;
 color: rgb(255, 85, 0);</string>
-             </property>
-             <property name="text">
-              <string>Séance xx</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QLabel" name="txtLabo">
-             <property name="styleSheet">
-              <string notr="true">font-size: 40px;
+     </property>
+     <property name="text">
+      <string>Séance xx</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLabel" name="txtCurrLabo">
+     <property name="styleSheet">
+      <string notr="true">font-size: 40px;
 font-weight: bold;
 color: rgb(255, 0, 127);</string>
-             </property>
-             <property name="text">
-              <string>Labo xx</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0" colspan="2">
-            <widget class="QLabel" name="lblArb">
-             <property name="styleSheet">
-              <string notr="true">font-weight: bold;
-font-size: 12pt;</string>
-             </property>
-             <property name="text">
-              <string>Arborescence</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0" colspan="2">
-            <widget class="QTreeWidget" name="treeWidget">
-             <column>
-              <property name="text">
-               <string notr="true">1</string>
-              </property>
-             </column>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </widget>
-       </item>
-      </layout>
-     </widget>
+     </property>
+     <property name="text">
+      <string>Labo xx</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
+   </item>
+   <item row="6" column="0" colspan="2">
+    <widget class="QTreeWidget" name="dirTree"/>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="lblDate">
+       <property name="text">
+        <string>Date</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDateEdit" name="txtDate">
+       <property name="currentSection">
+        <enum>QDateTimeEdit::DaySection</enum>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+       <property name="date">
+        <date>
+         <year>2024</year>
+         <month>5</month>
+         <day>1</day>
+        </date>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblSeance">
+       <property name="text">
+        <string>Séance</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="txtSeance">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>5</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblLabo">
+       <property name="text">
+        <string>Laboratoire</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="txtLabo">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>10</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>txtDate</sender>
+   <signal>dateChanged(QDate)</signal>
+   <receiver>Dialog</receiver>
+   <slot>dateChanged(QDate)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>148</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>5</x>
+     <y>183</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txtSeance</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Dialog</receiver>
+   <slot>seanceChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>338</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1</x>
+     <y>214</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>txtLabo</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Dialog</receiver>
+   <slot>laboChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>553</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>3</x>
+     <y>261</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>updateDirTree()</slot>
+  <slot>dateChanged(QDate)</slot>
+  <slot>seanceChanged(int)</slot>
+  <slot>laboChanged(int)</slot>
+ </slots>
 </ui>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\ui\collecte.ui'
+# Form implementation generated from reading ui file './ui/collecte.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -14,42 +14,29 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(621, 487)
+        Dialog.resize(834, 489)
         font = QtGui.QFont()
         font.setPointSize(12)
         Dialog.setFont(font)
-        self.gridLayout = QtWidgets.QGridLayout(Dialog)
+        self.gridLayout_4 = QtWidgets.QGridLayout(Dialog)
+        self.gridLayout_4.setObjectName("gridLayout_4")
+        self.gridLayout = QtWidgets.QGridLayout()
+        self.gridLayout.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
+        self.gridLayout.setSpacing(10)
         self.gridLayout.setObjectName("gridLayout")
-        self.lblArb = QtWidgets.QLabel(Dialog)
-        self.lblArb.setStyleSheet("font-weight: bold;\n"
-"font-size: 12pt;")
-        self.lblArb.setAlignment(QtCore.Qt.AlignCenter)
-        self.lblArb.setObjectName("lblArb")
-        self.gridLayout.addWidget(self.lblArb, 5, 0, 1, 2)
-        self.txtCurrDate = QtWidgets.QLabel(Dialog)
-        self.txtCurrDate.setStyleSheet("font-size: 60px;\n"
-"font-weight: bold;\n"
-"color: rgb(85, 170, 0);")
-        self.txtCurrDate.setAlignment(QtCore.Qt.AlignCenter)
-        self.txtCurrDate.setObjectName("txtCurrDate")
-        self.gridLayout.addWidget(self.txtCurrDate, 1, 0, 1, 2)
-        self.txtCurrSeance = QtWidgets.QLabel(Dialog)
-        self.txtCurrSeance.setStyleSheet("font-size: 40px;\n"
-"font-weight: bold;\n"
-"color: rgb(255, 85, 0);")
-        self.txtCurrSeance.setAlignment(QtCore.Qt.AlignCenter)
-        self.txtCurrSeance.setObjectName("txtCurrSeance")
-        self.gridLayout.addWidget(self.txtCurrSeance, 4, 0, 1, 1)
+        self.gridLayout_3 = QtWidgets.QGridLayout()
+        self.gridLayout_3.setObjectName("gridLayout_3")
+        self.treeDestDir = QtWidgets.QTreeWidget(Dialog)
+        self.treeDestDir.setObjectName("treeDestDir")
+        self.treeDestDir.headerItem().setText(0, "1")
+        self.gridLayout_3.addWidget(self.treeDestDir, 7, 0, 1, 2)
         self.txtCurrLabo = QtWidgets.QLabel(Dialog)
-        self.txtCurrLabo.setStyleSheet("font-size: 40px;\n"
+        self.txtCurrLabo.setStyleSheet("font-size: 30px;\n"
 "font-weight: bold;\n"
 "color: rgb(255, 0, 127);")
         self.txtCurrLabo.setAlignment(QtCore.Qt.AlignCenter)
         self.txtCurrLabo.setObjectName("txtCurrLabo")
-        self.gridLayout.addWidget(self.txtCurrLabo, 4, 1, 1, 1)
-        self.dirTree = QtWidgets.QTreeWidget(Dialog)
-        self.dirTree.setObjectName("dirTree")
-        self.gridLayout.addWidget(self.dirTree, 6, 0, 1, 2)
+        self.gridLayout_3.addWidget(self.txtCurrLabo, 6, 0, 1, 1)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.lblDate = QtWidgets.QLabel(Dialog)
@@ -77,24 +64,119 @@ class Ui_Dialog(object):
         self.txtLabo.setMaximum(10)
         self.txtLabo.setObjectName("txtLabo")
         self.horizontalLayout.addWidget(self.txtLabo)
-        self.gridLayout.addLayout(self.horizontalLayout, 0, 0, 1, 2)
+        self.gridLayout_3.addLayout(self.horizontalLayout, 4, 0, 1, 2)
+        self.lblDestination = QtWidgets.QLabel(Dialog)
+        self.lblDestination.setStyleSheet("font-weight: bold;\n"
+"font-size: 12pt;")
+        self.lblDestination.setAlignment(QtCore.Qt.AlignCenter)
+        self.lblDestination.setObjectName("lblDestination")
+        self.gridLayout_3.addWidget(self.lblDestination, 2, 0, 1, 2)
+        self.txtCurrDate = QtWidgets.QLabel(Dialog)
+        self.txtCurrDate.setStyleSheet("font-size: 40px;\n"
+"font-weight: bold;\n"
+"color: rgb(85, 170, 0);")
+        self.txtCurrDate.setAlignment(QtCore.Qt.AlignCenter)
+        self.txtCurrDate.setObjectName("txtCurrDate")
+        self.gridLayout_3.addWidget(self.txtCurrDate, 5, 0, 1, 2)
+        self.txtCurrSeance = QtWidgets.QLabel(Dialog)
+        self.txtCurrSeance.setStyleSheet("font-size: 30px;\n"
+"font-weight: bold;\n"
+"color: rgb(255, 85, 0);")
+        self.txtCurrSeance.setAlignment(QtCore.Qt.AlignCenter)
+        self.txtCurrSeance.setObjectName("txtCurrSeance")
+        self.gridLayout_3.addWidget(self.txtCurrSeance, 6, 1, 1, 1)
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.lblDestDir = QtWidgets.QLabel(Dialog)
+        self.lblDestDir.setObjectName("lblDestDir")
+        self.horizontalLayout_3.addWidget(self.lblDestDir)
+        self.txtDestDir = QtWidgets.QLineEdit(Dialog)
+        self.txtDestDir.setObjectName("txtDestDir")
+        self.horizontalLayout_3.addWidget(self.txtDestDir)
+        self.btnDestDir = QtWidgets.QPushButton(Dialog)
+        self.btnDestDir.setObjectName("btnDestDir")
+        self.horizontalLayout_3.addWidget(self.btnDestDir)
+        self.gridLayout_3.addLayout(self.horizontalLayout_3, 3, 0, 1, 2)
+        self.gridLayout.addLayout(self.gridLayout_3, 0, 1, 1, 1)
+        self.gridLayout_2 = QtWidgets.QGridLayout()
+        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.lblSource = QtWidgets.QLabel(Dialog)
+        self.lblSource.setStyleSheet("font-weight: bold;\n"
+"font-size: 12pt;")
+        self.lblSource.setAlignment(QtCore.Qt.AlignCenter)
+        self.lblSource.setObjectName("lblSource")
+        self.gridLayout_2.addWidget(self.lblSource, 0, 0, 1, 1)
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.lblSrcDir = QtWidgets.QLabel(Dialog)
+        self.lblSrcDir.setObjectName("lblSrcDir")
+        self.horizontalLayout_2.addWidget(self.lblSrcDir)
+        self.txtSrcDir = QtWidgets.QLineEdit(Dialog)
+        self.txtSrcDir.setObjectName("txtSrcDir")
+        self.horizontalLayout_2.addWidget(self.txtSrcDir)
+        self.btnSrcDir = QtWidgets.QPushButton(Dialog)
+        self.btnSrcDir.setObjectName("btnSrcDir")
+        self.horizontalLayout_2.addWidget(self.btnSrcDir)
+        self.gridLayout_2.addLayout(self.horizontalLayout_2, 1, 0, 1, 1)
+        self.tblSrcDir = QtWidgets.QTableWidget(Dialog)
+        self.tblSrcDir.setObjectName("tblSrcDir")
+        self.tblSrcDir.setColumnCount(3)
+        self.tblSrcDir.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tblSrcDir.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tblSrcDir.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tblSrcDir.setHorizontalHeaderItem(2, item)
+        self.gridLayout_2.addWidget(self.tblSrcDir, 3, 0, 1, 1)
+        self.btnSrcSearch = QtWidgets.QPushButton(Dialog)
+        self.btnSrcSearch.setObjectName("btnSrcSearch")
+        self.gridLayout_2.addWidget(self.btnSrcSearch, 2, 0, 1, 1)
+        self.gridLayout.addLayout(self.gridLayout_2, 0, 0, 1, 1)
+        self.gridLayout.setColumnStretch(0, 1)
+        self.gridLayout.setColumnStretch(1, 1)
+        self.gridLayout_4.addLayout(self.gridLayout, 0, 0, 1, 1)
 
         self.retranslateUi(Dialog)
         self.txtDate.dateChanged['QDate'].connect(Dialog.dateChanged) # type: ignore
         self.txtSeance.valueChanged['int'].connect(Dialog.seanceChanged) # type: ignore
         self.txtLabo.valueChanged['int'].connect(Dialog.laboChanged) # type: ignore
+        self.btnSrcDir.clicked.connect(Dialog.btnSrcDirClicked) # type: ignore
+        self.btnSrcSearch.clicked.connect(Dialog.btnSrcSearchClicked) # type: ignore
+        self.btnDestDir.clicked.connect(Dialog.btnDestDirClicked) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(Dialog)
+        Dialog.setTabOrder(self.txtSrcDir, self.btnSrcDir)
+        Dialog.setTabOrder(self.btnSrcDir, self.btnSrcSearch)
+        Dialog.setTabOrder(self.btnSrcSearch, self.tblSrcDir)
+        Dialog.setTabOrder(self.tblSrcDir, self.txtDestDir)
+        Dialog.setTabOrder(self.txtDestDir, self.btnDestDir)
+        Dialog.setTabOrder(self.btnDestDir, self.txtDate)
+        Dialog.setTabOrder(self.txtDate, self.txtSeance)
+        Dialog.setTabOrder(self.txtSeance, self.txtLabo)
+        Dialog.setTabOrder(self.txtLabo, self.treeDestDir)
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.lblArb.setText(_translate("Dialog", "Arborescence"))
-        self.txtCurrDate.setText(_translate("Dialog", "2023-05-28"))
-        self.txtCurrSeance.setText(_translate("Dialog", "Séance xx"))
+        Dialog.setWindowTitle(_translate("Dialog", "BacUp"))
         self.txtCurrLabo.setText(_translate("Dialog", "Labo xx"))
         self.lblDate.setText(_translate("Dialog", "Date"))
         self.lblSeance.setText(_translate("Dialog", "Séance"))
-        self.lblLabo.setText(_translate("Dialog", "Laboratoire"))
+        self.lblLabo.setText(_translate("Dialog", "Labo"))
+        self.lblDestination.setText(_translate("Dialog", "Dossier Destination"))
+        self.txtCurrDate.setText(_translate("Dialog", "2023-05-28"))
+        self.txtCurrSeance.setText(_translate("Dialog", "Séance xx"))
+        self.lblDestDir.setText(_translate("Dialog", "Destination"))
+        self.btnDestDir.setText(_translate("Dialog", "Choisir..."))
+        self.lblSource.setText(_translate("Dialog", "Dossier Source"))
+        self.lblSrcDir.setText(_translate("Dialog", "Source"))
+        self.btnSrcDir.setText(_translate("Dialog", "Choisir..."))
+        item = self.tblSrcDir.horizontalHeaderItem(0)
+        item.setText(_translate("Dialog", "Dossier"))
+        item = self.tblSrcDir.horizontalHeaderItem(1)
+        item.setText(_translate("Dialog", "Taille"))
+        item = self.tblSrcDir.horizontalHeaderItem(2)
+        item.setText(_translate("Dialog", "Nbre Fichiers"))
+        self.btnSrcSearch.setText(_translate("Dialog", "Recherche"))
 
 
 if __name__ == "__main__":

@@ -6,7 +6,7 @@ from typing import List, Tuple
 import psutil
 import py7zr
 
-from config import AppConfig
+from .config import AppConfig
 
 
 # Fonctions génériques
@@ -72,13 +72,49 @@ def fetch_removable_drives_list() -> List:
     return drives
 
 
-# 
-def search_dir_students(base_dir):
-    lst = []
-    for dirpath, dirnames, filenames in os.walk(base_dir):
-        for dirname in dirnames:
-            if re.match(r"/\d{6,}/gm", dirname):
-                pathname = os.path.join(dirpath, dirname)
-                lst.append(pathname)
-    return pathname
-        
+#
+def human_filesize_unit(filesize):
+    unit = ["B", "KB", "MB", "GB"]
+    i = 0
+    while filesize > 512:
+        filesize /= 1024
+        i += 1
+    return f"{filesize:3.1f}{unit[i]}"
+
+
+def search_dir_students(base_dir):   
+    def find_students_folders(dirpath):
+        lst = []
+        for filename in os.listdir(base_dir):
+            pathname = os.path.join(dirpath, filename)
+            if folder_exists(pathname) and re.match(r"\d{6,}", filename):
+                dct = {
+                    "dirname": filename,
+                    "dirpath": pathname,
+                    "files": [],
+                    "dirs": [],
+                    "totalsize": 0
+                }
+                lst.append(dct)
+        return lst
+    
+    def find_elements(lst):
+        for item in lst:
+            for dirpath, dirnames, filenames in os.walk(item["dirpath"]):
+                for filename in filenames:
+                    filepath = os.path.join(dirpath, filename)
+                    dct = {
+                        "filename": filename,
+                        "filepath": filepath,
+                        "filesize": os.path.getsize(filepath)
+                    }
+                    item["files"].append(dct)
+                    item["totalsize"] += dct["filesize"]
+                for dirname in dirnames:
+                    item["dirs"].append(dirname)
+
+
+    lst = find_students_folders(base_dir)
+    find_elements(lst)
+    return lst
+    

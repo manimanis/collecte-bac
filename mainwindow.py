@@ -2,7 +2,7 @@ import os
 from PyQt5.QtWidgets import QApplication, QMessageBox
 from PyQt5.uic import loadUi
 from PyQt5.QtCore import QDate, QFileSystemWatcher, QStorageInfo
-from config import AppConfig
+from src.config import AppConfig
 import utility_functions as uf
 
 

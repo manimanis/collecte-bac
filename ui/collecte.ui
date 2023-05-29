@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>834</width>
+    <width>837</width>
     <height>489</height>
    </rect>
   </property>
@@ -184,6 +184,78 @@ color: rgb(255, 85, 0);</string>
      </item>
      <item row="0" column="0">
       <layout class="QGridLayout" name="gridLayout_2">
+       <item row="4" column="0">
+        <widget class="QTreeWidget" name="treeSrcDir">
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>true</bool>
+         </property>
+         <property name="uniformRowHeights">
+          <bool>true</bool>
+         </property>
+         <property name="allColumnsShowFocus">
+          <bool>true</bool>
+         </property>
+         <attribute name="headerShowSortIndicator" stdset="0">
+          <bool>true</bool>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Dossier</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Taille</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignLeading|AlignVCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Fichiers</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignLeading|AlignVCenter</set>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Dossiers</string>
+          </property>
+          <property name="textAlignment">
+           <set>AlignLeading|AlignVCenter</set>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="txtSrcCurrPath">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnSrcDir">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Choisir...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
        <item row="0" column="0">
         <widget class="QLabel" name="lblSource">
          <property name="styleSheet">
@@ -198,52 +270,30 @@ font-size: 12pt;</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QLabel" name="lblSrcDir">
-           <property name="text">
-            <string>Source</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="txtSrcDir"/>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btnSrcDir">
-           <property name="text">
-            <string>Choisir...</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="3" column="0">
-        <widget class="QTableWidget" name="tblSrcDir">
-         <column>
-          <property name="text">
-           <string>Dossier</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Taille</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Nbre Fichiers</string>
-          </property>
-         </column>
-        </widget>
-       </item>
        <item row="2" column="0">
         <widget class="QPushButton" name="btnSrcSearch">
          <property name="text">
           <string>Recherche</string>
          </property>
         </widget>
+       </item>
+       <item row="5" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="txtNbFichiers">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="txtNbDossiers">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
@@ -252,10 +302,8 @@ font-size: 12pt;</string>
   </layout>
  </widget>
  <tabstops>
-  <tabstop>txtSrcDir</tabstop>
   <tabstop>btnSrcDir</tabstop>
   <tabstop>btnSrcSearch</tabstop>
-  <tabstop>tblSrcDir</tabstop>
   <tabstop>txtDestDir</tabstop>
   <tabstop>btnDestDir</tabstop>
   <tabstop>txtDate</tabstop>

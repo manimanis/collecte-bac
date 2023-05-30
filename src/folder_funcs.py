@@ -82,7 +82,32 @@ def human_filesize_unit(filesize):
     return f"{filesize:3.1f}{unit[i]}"
 
 
-def search_dir_students(base_dir):   
+def search_folder_contents(base_dir):
+    dct = {
+        "dirname": os.path.basename(base_dir),
+        "dirpath": base_dir,
+        "files": [],
+        "dirs": [],
+        "totalsize": 0
+    }
+    for filename in os.listdir(base_dir):
+        filepath = os.path.join(base_dir, filename)
+        if os.path.isfile(filepath):
+            filesize = os.path.getsize(filepath)
+            dct["files"].append({
+                "filename": filename,
+                "filepath": filepath,
+                "filesize": filesize
+            })
+            dct["totalsize"] += filesize
+        elif os.path.isdir(filepath):
+            dirdct = search_folder_contents(filepath)
+            dct["dirs"].append(dirdct)
+            dct["totalsize"] += dirdct["totalsize"]
+    return dct
+
+
+def search_dir_students(base_dir):
     def find_students_folders(dirpath):
         lst = []
         for filename in os.listdir(base_dir):
@@ -97,7 +122,7 @@ def search_dir_students(base_dir):
                 }
                 lst.append(dct)
         return lst
-    
+
     def find_elements(lst):
         for item in lst:
             for dirpath, dirnames, filenames in os.walk(item["dirpath"]):
@@ -113,8 +138,6 @@ def search_dir_students(base_dir):
                 for dirname in dirnames:
                     item["dirs"].append(dirname)
 
-
     lst = find_students_folders(base_dir)
     find_elements(lst)
     return lst
-    

@@ -27,6 +27,216 @@
      <property name="spacing">
       <number>10</number>
      </property>
+     <item row="0" column="1">
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="8" column="1">
+        <widget class="QLabel" name="txtCurrSeance">
+         <property name="styleSheet">
+          <string notr="true">font-size: 30px;
+font-weight: bold;
+color: rgb(255, 85, 0);</string>
+         </property>
+         <property name="text">
+          <string>Séance xx</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="15" column="1" colspan="2">
+        <widget class="QPushButton" name="btnImportAll">
+         <property name="text">
+          <string>Importer tout...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="2">
+        <widget class="QLabel" name="txtCurrLabo">
+         <property name="styleSheet">
+          <string notr="true">font-size: 30px;
+font-weight: bold;
+color: rgb(255, 0, 127);</string>
+         </property>
+         <property name="text">
+          <string>Labo xx</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="2">
+        <widget class="QLabel" name="lblDestination">
+         <property name="styleSheet">
+          <string notr="true">font-weight: bold;
+font-size: 12pt;</string>
+         </property>
+         <property name="text">
+          <string>Dossier Destination</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1" colspan="2">
+        <widget class="QLabel" name="txtCurrDate">
+         <property name="styleSheet">
+          <string notr="true">font-size: 40px;
+font-weight: bold;
+color: rgb(85, 170, 0);</string>
+         </property>
+         <property name="text">
+          <string>2023-05-28</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="txtDestDir">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="1" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="txtDestCurrPath">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnDestDir">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Choisir...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="6" column="1" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="lblDate">
+           <property name="text">
+            <string>Date</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="txtDate">
+           <property name="currentSection">
+            <enum>QDateTimeEdit::DaySection</enum>
+           </property>
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
+           <property name="date">
+            <date>
+             <year>2024</year>
+             <month>5</month>
+             <day>1</day>
+            </date>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblSeance">
+           <property name="text">
+            <string>Séance</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="txtSeance">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>5</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblLabo">
+           <property name="text">
+            <string>Labo</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="txtLabo">
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="4" column="1" colspan="2">
+        <widget class="QPushButton" name="btnDestSearch">
+         <property name="text">
+          <string>Recherche</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="1" colspan="2">
+        <widget class="QProgressBar" name="progressBar">
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="textVisible">
+          <bool>false</bool>
+         </property>
+         <property name="invertedAppearance">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1" colspan="2">
+        <widget class="QTreeWidget" name="treeDestDir">
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="rootIsDecorated">
+          <bool>true</bool>
+         </property>
+         <property name="expandsOnDoubleClick">
+          <bool>false</bool>
+         </property>
+         <column>
+          <property name="text">
+           <string>Nom</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Type</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </item>
      <item row="0" column="0">
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="5" column="0">
@@ -111,6 +321,9 @@ font-size: 12pt;</string>
          <property name="allColumnsShowFocus">
           <bool>true</bool>
          </property>
+         <property name="expandsOnDoubleClick">
+          <bool>false</bool>
+         </property>
          <attribute name="headerShowSortIndicator" stdset="0">
           <bool>true</bool>
          </attribute>
@@ -178,169 +391,6 @@ font-size: 12pt;</string>
        </item>
       </layout>
      </item>
-     <item row="0" column="1">
-      <layout class="QGridLayout" name="gridLayout_3">
-       <item row="7" column="1" colspan="2">
-        <widget class="QTreeWidget" name="treeDestDir"/>
-       </item>
-       <item row="5" column="1" colspan="2">
-        <widget class="QLabel" name="txtCurrDate">
-         <property name="styleSheet">
-          <string notr="true">font-size: 40px;
-font-weight: bold;
-color: rgb(85, 170, 0);</string>
-         </property>
-         <property name="text">
-          <string>2023-05-28</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QLabel" name="txtDestCurrPath">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btnDestDir">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="text">
-            <string>Choisir...</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="2" column="1" colspan="2">
-        <widget class="QLabel" name="lblDestination">
-         <property name="styleSheet">
-          <string notr="true">font-weight: bold;
-font-size: 12pt;</string>
-         </property>
-         <property name="text">
-          <string>Dossier Destination</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QLabel" name="txtCurrSeance">
-         <property name="styleSheet">
-          <string notr="true">font-size: 30px;
-font-weight: bold;
-color: rgb(255, 85, 0);</string>
-         </property>
-         <property name="text">
-          <string>Séance xx</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QLabel" name="lblDate">
-           <property name="text">
-            <string>Date</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QDateEdit" name="txtDate">
-           <property name="currentSection">
-            <enum>QDateTimeEdit::DaySection</enum>
-           </property>
-           <property name="calendarPopup">
-            <bool>true</bool>
-           </property>
-           <property name="date">
-            <date>
-             <year>2024</year>
-             <month>5</month>
-             <day>1</day>
-            </date>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="lblSeance">
-           <property name="text">
-            <string>Séance</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="txtSeance">
-           <property name="minimum">
-            <number>1</number>
-           </property>
-           <property name="maximum">
-            <number>5</number>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="lblLabo">
-           <property name="text">
-            <string>Labo</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="txtLabo">
-           <property name="minimum">
-            <number>1</number>
-           </property>
-           <property name="maximum">
-            <number>10</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="6" column="2">
-        <widget class="QLabel" name="txtCurrLabo">
-         <property name="styleSheet">
-          <string notr="true">font-size: 30px;
-font-weight: bold;
-color: rgb(255, 0, 127);</string>
-         </property>
-         <property name="text">
-          <string>Labo xx</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="1" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <item>
-          <widget class="QLabel" name="txtDestDir">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
     </layout>
    </item>
   </layout>
@@ -352,7 +402,6 @@ color: rgb(255, 0, 127);</string>
   <tabstop>txtDate</tabstop>
   <tabstop>txtSeance</tabstop>
   <tabstop>txtLabo</tabstop>
-  <tabstop>treeDestDir</tabstop>
  </tabstops>
  <resources/>
  <connections>
@@ -363,8 +412,8 @@ color: rgb(255, 0, 127);</string>
    <slot>dateChanged(QDate)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>592</x>
-     <y>92</y>
+     <x>628</x>
+     <y>298</y>
     </hint>
     <hint type="destinationlabel">
      <x>5</x>
@@ -379,8 +428,8 @@ color: rgb(255, 0, 127);</string>
    <slot>seanceChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>707</x>
-     <y>95</y>
+     <x>757</x>
+     <y>298</y>
     </hint>
     <hint type="destinationlabel">
      <x>1</x>
@@ -395,8 +444,8 @@ color: rgb(255, 0, 127);</string>
    <slot>laboChanged(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>821</x>
-     <y>95</y>
+     <x>887</x>
+     <y>298</y>
     </hint>
     <hint type="destinationlabel">
      <x>3</x>
@@ -443,12 +492,76 @@ color: rgb(255, 0, 127);</string>
    <slot>btnDestDirClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>771</x>
-     <y>54</y>
+     <x>887</x>
+     <y>63</y>
     </hint>
     <hint type="destinationlabel">
      <x>414</x>
      <y>99</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnImportAll</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>btnImportAllClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>659</x>
+     <y>478</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>300</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnDestSearch</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>btnDestSearchClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>641</x>
+     <y>79</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>448</x>
+     <y>94</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>treeDestDir</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>Dialog</receiver>
+   <slot>treeDestDirDoubleClicked(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>571</x>
+     <y>149</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>451</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>treeSrcDir</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>Dialog</receiver>
+   <slot>treeSrcDirDoubleClicked(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>182</x>
+     <y>173</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>448</x>
+     <y>356</y>
     </hint>
    </hints>
   </connection>
@@ -461,5 +574,9 @@ color: rgb(255, 0, 127);</string>
   <slot>btnSrcDirClicked()</slot>
   <slot>btnDestDirClicked()</slot>
   <slot>btnSrcSearchClicked()</slot>
+  <slot>btnImportAllClicked()</slot>
+  <slot>btnDestSearchClicked()</slot>
+  <slot>treeDestDirDoubleClicked(QModelIndex)</slot>
+  <slot>treeSrcDirDoubleClicked(QModelIndex)</slot>
  </slots>
 </ui>

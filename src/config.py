@@ -1,12 +1,14 @@
 import datetime
 import os
 import configparser
+import sys
 
 
 class AppConfig:
-    LOCAL_BACKUP_FOLDER = "D:\\Backup\\Bac2023"
-    LOCAL_COMPRESSED_FOLDER = "D:\\Users\\hp\\Backup\\Bac2023"
+    LOCAL_BACKUP_FOLDER = ""
+    LOCAL_COMPRESSED_FOLDER = ""
     BASE_SOURCE_FOLDER = ""
+    ANNEE_SCOLAIRE = 2023
     NUM_SEANCE = 1
     NUM_LABO = 1
     DATE_SEANCE = datetime.date.today().isoformat()
@@ -40,9 +42,24 @@ class AppConfig:
         AppConfig.BASE_SOURCE_FOLDER = newFolder
         return AppConfig
     
+    def default_config_windows():
+        AppConfig.LOCAL_BACKUP_FOLDER = f"D:\\Backup\\Bac{AppConfig.ANNEE_SCOLAIRE}"
+        AppConfig.LOCAL_COMPRESSED_FOLDER = f"D:\\Users\\hp\\Backup\\Bac{AppConfig.ANNEE_SCOLAIRE}"
+        AppConfig.BASE_SOURCE_FOLDER = ""
+    
+    def default_config_linux():
+        home_dir = os.path.expanduser("~")
+        AppConfig.LOCAL_BACKUP_FOLDER = os.path.join(home_dir, f"Bac{AppConfig.ANNEE_SCOLAIRE}")
+        AppConfig.LOCAL_COMPRESSED_FOLDER = os.path.join(home_dir, "archive", f"Bac{AppConfig.ANNEE_SCOLAIRE}")
+        AppConfig.BASE_SOURCE_FOLDER = ""
+    
     def load_config():
+        if sys.platform == "win32":
+            AppConfig.default_config_windows()
+        else:
+            AppConfig.default_config_linux()
         curr_dir = os.path.dirname(__file__)
-        filepath = os.path.join(curr_dir, "parameters.ini")
+        filepath = os.path.join(curr_dir, f"{sys.platform}-parameters.ini")
         config = configparser.ConfigParser()
         if os.path.exists(filepath):
             config.read(filepath)
@@ -58,7 +75,7 @@ class AppConfig:
     
     def save_config():
         curr_dir = os.path.dirname(__file__)
-        filepath = os.path.join(curr_dir, "parameters.ini")        
+        filepath = os.path.join(curr_dir, f"{sys.platform}-parameters.ini")        
         config = configparser.ConfigParser()
         config.add_section("params")
         config.set("params", "NUM_SEANCE", str(AppConfig.NUM_SEANCE))

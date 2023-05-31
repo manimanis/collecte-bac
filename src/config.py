@@ -42,18 +42,20 @@ class AppConfig:
         AppConfig.BASE_SOURCE_FOLDER = newFolder
         return AppConfig
     
-    def default_config_windows():
-        AppConfig.LOCAL_BACKUP_FOLDER = f"D:\\Backup\\Bac{AppConfig.ANNEE_SCOLAIRE}"
-        AppConfig.LOCAL_COMPRESSED_FOLDER = f"D:\\Users\\hp\\Backup\\Bac{AppConfig.ANNEE_SCOLAIRE}"
-        AppConfig.BASE_SOURCE_FOLDER = ""
-    
-    def default_config_linux():
+    def default_config():
         home_dir = os.path.expanduser("~")
         AppConfig.LOCAL_BACKUP_FOLDER = os.path.join(home_dir, f"Bac{AppConfig.ANNEE_SCOLAIRE}")
-        AppConfig.LOCAL_COMPRESSED_FOLDER = os.path.join(home_dir, "archive", f"Bac{AppConfig.ANNEE_SCOLAIRE}")
+        AppConfig.LOCAL_COMPRESSED_FOLDER = os.path.join(home_dir, "Archive", f"Bac{AppConfig.ANNEE_SCOLAIRE}")
         AppConfig.BASE_SOURCE_FOLDER = ""
     
+    def default_config_windows():
+        pass
+    
+    def default_config_linux():
+        pass
+    
     def load_config():
+        AppConfig.default_config()
         if sys.platform == "win32":
             AppConfig.default_config_windows()
         else:

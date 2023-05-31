@@ -2,3 +2,5 @@
 __pycache__
 venv
 test_dir
+*/linux-parameters.ini
+*/win32-parameters.ini

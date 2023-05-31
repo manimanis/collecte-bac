@@ -88,6 +88,8 @@ def search_folder_contents(base_dir):
         "dirpath": base_dir,
         "files": [],
         "dirs": [],
+        "num_files": 0,
+        "num_dirs": 0,
         "totalsize": 0
     }
     for filename in os.listdir(base_dir):
@@ -100,10 +102,13 @@ def search_folder_contents(base_dir):
                 "filesize": filesize
             })
             dct["totalsize"] += filesize
+            dct["num_files"] += 1
         elif os.path.isdir(filepath):
             dirdct = search_folder_contents(filepath)
             dct["dirs"].append(dirdct)
             dct["totalsize"] += dirdct["totalsize"]
+            dct["num_files"] += dirdct["num_files"]
+            dct["num_dirs"] += (dirdct["num_dirs"] + 1)
     return dct
 
 
